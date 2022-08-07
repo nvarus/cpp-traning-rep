@@ -2,8 +2,8 @@ let defaultName = "JavaScript";
 
 function sayHallo(name) {
     if (name == null) {
-        alert("Hello, " + defaultName + "!");
+        console.log("Hello, " + defaultName + "!");
     } else {
-        alert("Hello" + name + "!");
+        console.log("Hello" + name + "!");
     }
 }
