@@ -1,13 +1,14 @@
 /******************************************************************
- * ƒ« ¢  7, ‡ ¤ ç  9
+ * Ð“Ð»Ð°Ð²Ð° 7, Ð—Ð°Ð´Ð°Ñ‡Ð° 9
  * ****************************************************************/
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
 const int SLEN = 30;
-struct student {
+struct student
+{
     string fullname;
     string hobby;
     int ooplevel;
@@ -24,7 +25,7 @@ int main()
     cin >> class_size;
     while (cin.get() != '\n')
         continue;
-    student *ptr_stu = new student [class_size];
+    student *ptr_stu = new student[class_size];
     int entered = getinfo(ptr_stu, class_size);
     for (int i = 0; i < entered; i++)
     {
@@ -32,54 +33,54 @@ int main()
         display2(&ptr_stu[i]);
     }
     display3(ptr_stu, entered);
-    delete [] ptr_stu;
+    delete[] ptr_stu;
     cout << "Done!\n";
     return 0;
 }
 //----------------------------------------------------------------------
 int getinfo(student pa[], int n)
 {
-    cout << "‚¢¥¤¨â¥ ¤ ­­ë¥ ® áâã¤¥­â å:\n";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°Ñ…:\n";
     int count = 0;
     for (int i = 0; i < n; i++)
     {
-        cout << "‘âã¤¥­â ü" << i + 1 << ". ˆ¬ï: ";
+        cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ â„–" << i + 1 << ". Ð˜Ð¼Ñ: ";
         getline(cin, pa[i].fullname);
         if (pa[i].fullname == "")
         {
-            cout << "‚¢®¤ ¯à¥à¢ ­. ‚¢¥¤¥­® ¯ãáâ®¥ §­ ç¥­¨¥. ‡­ ç¥­¨©: " << count << endl;
+            cout << "Ð’Ð²Ð¾Ð´ Ð¿Ñ€ÐµÑ€Ð²Ð°Ð½. Ð’Ð²ÐµÐ´ÐµÐ½Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ. Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹: " << count << endl;
             return count;
         }
-        cout << "‘âã¤¥­â ü" << i + 1 << ". •®¡¡¨: ";
+        cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ â„–" << i + 1 << ". Ð¥Ð¾Ð±Ð±Ð¸: ";
         getline(cin, pa[i].hobby);
-        cout << "‘âã¤¥­â ü" << i + 1 << ". “à®¢¥­ì: ";
+        cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ â„–" << i + 1 << ". Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ: ";
         cin >> pa[i].ooplevel;
         cin.get();
-        count ++;
+        count++;
     }
     return count;
 }
 //---------------------------------------------------------------------
 void display1(student st)
 {
-    cout    << st.fullname  << "\t"
-            << st.hobby     << "\t"
-            << st.ooplevel  << endl;
+    cout << st.fullname << "\t"
+         << st.hobby << "\t"
+         << st.ooplevel << endl;
 }
 //----------------------------------------------------------------------
 void display2(const student *ps)
 {
-    cout    << ps->fullname  << "\t"
-            << ps->hobby     << "\t"
-            << ps->ooplevel  << endl;
+    cout << ps->fullname << "\t"
+         << ps->hobby << "\t"
+         << ps->ooplevel << endl;
 }
 //-----------------------------------------------------------------------
 void display3(const student pa[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout    << pa[i].fullname   << "\t"
-                << pa[i].hobby      << "\t"
-                << pa[i].ooplevel   << endl;
+        cout << pa[i].fullname << "\t"
+             << pa[i].hobby << "\t"
+             << pa[i].ooplevel << endl;
     }
 }
